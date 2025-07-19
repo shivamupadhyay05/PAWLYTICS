@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pawcare-connect | Customer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#pet-health" class="nav-link">Pet Health Check</a>
+        <a href="#buy-product" class="nav-link">Buy Product</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#nearest" class="nav-link">Nearest Shop & Hospital</a>
+        <a href="#cart" class="nav-link">Cart</a>
+        <a href="#profile" class="nav-link">Profile</a>
+    </nav>
+    <main class="customer-main">
+        <section id="home" class="section">
+            <h1>Welcome to Pawlytics!</h1>
+            <p>
+                Pawcare-Connect is your one-stop platform for all your pet care needs. Here, you can monitor your pet's health, buy products, find answers to your questions, and locate the nearest pet shops and hospitals. Our mission is to make pet care easy, accessible, and enjoyable for every pet owner.
+            </p>
+            <ul style="margin-top:1.5rem;line-height:2;">
+                <li>✔️ Track your pets and their health records in one place</li>
+                <li>✔️ Get instant health advice and hospital recommendations</li>
+                <li>✔️ Shop for food, toys, and accessories from trusted stores</li>
+                <li>✔️ Find the nearest pet shops and hospitals with a click</li>
+                <li>✔️ Manage your orders and view your pet care history</li>
+                <li>✔️ Friendly support and AI assistant for all your questions</li>
+            </ul>
+            <div style="margin-top:2.5rem;">
+                <strong>Contact us:</strong> support@pawlytics.com | +1-800-555-PAWS
+            </div>
+        </section>
+        <section id="pet-health" class="section" style="display:none;">
+            <h2>Pet Health Check</h2>
+            <form id="symptom-form">
+                <p>Select any symptoms your pet is experiencing:</p>
+                <label><input type="checkbox" name="symptom" value="Fever"> Fever</label><br>
+                <label><input type="checkbox" name="symptom" value="Vomiting"> Vomiting</label><br>
+                <label><input type="checkbox" name="symptom" value="Loss of Appetite"> Loss of Appetite</label><br>
+                <label><input type="checkbox" name="symptom" value="Coughing"> Coughing</label><br>
+                <label><input type="checkbox" name="symptom" value="Lethargy"> Lethargy</label><br>
+                <label><input type="checkbox" name="symptom" value="Diarrhea"> Diarrhea</label><br>
+                <button type="button" class="login-btn" style="margin-top:1rem;">Check Recommendations</button>
+            </form>
+            <div id="hospital-recommendation" style="margin-top:2rem;">
+                <strong>Recommended Hospital:</strong> (This will show after checking symptoms)
+            </div>
+        </section>
+        <section id="buy-product" class="section" style="display:none;">
+            <h2>Buy Product</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <strong>Dog Food</strong><br>
+                    Price: $20<br>
+                    <button class="login-btn" style="margin-top:0.5rem;">Add to Cart</button>
+                </div>
+                <div class="product-item" style="margin-top:1.5rem;">
+                    <strong>Cat Toy</strong><br>
+                    Price: $8<br>
+                    <button class="login-btn" style="margin-top:0.5rem;">Add to Cart</button>
+                </div>
+                <div class="product-item" style="margin-top:1.5rem;">
+                    <strong>Pet Shampoo</strong><br>
+                    Price: $12<br>
+                    <button class="login-btn" style="margin-top:0.5rem;">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+        <section id="faq" class="section" style="display:none;">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <strong>Q: How do I add a new pet to my profile?</strong><br>
+                    A: Go to your profile page and click on 'Add Pet'. Fill in the details and save.
+                </div>
+                <div class="faq-item" style="margin-top:1.2rem;">
+                    <strong>Q: How can I find the nearest pet shop?</strong><br>
+                    A: Use the 'Nearest Shop & Hospital' section to search by your location.
+                </div>
+                <div class="faq-item" style="margin-top:1.2rem;">
+                    <strong>Q: Can I order products for home delivery?</strong><br>
+                    A: Yes, add products to your cart and proceed to checkout for delivery options.
+                </div>
+                <div class="faq-item" style="margin-top:1.2rem;">
+                    <strong>Q: What should I do if my pet is sick?</strong><br>
+                    A: Use the 'Pet Health Check' section to check symptoms and get hospital recommendations.
+                </div>
+            </div>
+        </section>
+        <section id="nearest" class="section" style="display:none;">
+            <h2>Nearest Shop & Hospital</h2>
+            <div class="nearest-list">
+                <div class="nearest-item">
+                    <strong>Paws & Claws Pet Shop</strong><br>
+                    123 Main Street, Cityville<br>
+                    <button class="login-btn" style="margin-top:0.5rem;">View on Map</button>
+                </div>
+                <div class="nearest-item" style="margin-top:1.5rem;">
+                    <strong>Happy Tails Animal Hospital</strong><br>
+                    456 Pet Avenue, Cityville<br>
+                    <button class="login-btn" style="margin-top:0.5rem;">View on Map</button>
+                </div>
+            </div>
+        </section>
+        <section id="cart" class="section" style="display:none;">
+            <h2>Cart</h2>
+            <table class="cart-table" style="width:100%;margin-bottom:1.5rem;">
+                <thead>
+                    <tr>
+                        <th style="text-align:left;">Product</th>
+                        <th style="text-align:center;">Quantity</th>
+                        <th style="text-align:right;">Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dog Food</td>
+                        <td style="text-align:center;">1</td>
+                        <td style="text-align:right;">$20</td>
+                        <td><button class="login-btn" style="padding:0.2rem 1rem;font-size:0.95rem;">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>Cat Toy</td>
+                        <td style="text-align:center;">2</td>
+                        <td style="text-align:right;">$16</td>
+                        <td><button class="login-btn" style="padding:0.2rem 1rem;font-size:0.95rem;">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="login-btn" style="width:100%;">Checkout</button>
+        </section>
+        <section id="profile" class="section" style="display:none;">
+            <h2>Profile</h2>
+            <div style="margin-bottom:1.5rem;">
+                <strong>Name:</strong> John Doe<br>
+                <strong>Email:</strong> john@example.com<br>
+                <strong>Pets Owned:</strong> 2<br>
+                <strong>Orders Placed:</strong> 5
+            </div>
+            <div style="margin-bottom:1.5rem;">
+                <h3>Settings</h3>
+                <ul style="list-style:none;padding:0;">
+                    <li><a href="#" style="color:#8f94fb;">Change Password</a></li>
+                    <li><a href="#" style="color:#8f94fb;">Notification Preferences</a></li>
+                    <li><a href="#" style="color:#8f94fb;">Logout</a></li>
+                </ul>
+            </div>
+        </section>
+        <div class="login-extra">
+            <a href="index.html">Back to Login</a>
+        </div>
+    </main>
+    <footer style="width:100%;background:#23243a;color:#f3f3f3;text-align:center;padding:1.5rem 0 1rem 0;margin-top:2rem;border-top:1px solid #4e54c8;">
+        <div style="font-size:1.1rem;font-weight:600;">Pawlytics &copy; 2024</div>
+        <div style="margin-top:0.5rem;">Contact: support@pawlytics.com | +1-800-555-PAWS</div>
+        <div style="margin-top:0.5rem;">Follow us: <a href="#" style="color:#8f94fb;">Instagram</a> | <a href="#" style="color:#8f94fb;">Facebook</a> | <a href="#" style="color:#8f94fb;">Twitter</a></div>
+    </footer>
+    <script>
+        // SPA-like navigation: show only one section at a time
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.getAttribute('href').replace('#','');
+                sections.forEach(sec => sec.style.display = 'none');
+                document.getElementById(target).style.display = '';
+                window.scrollTo({top:0,behavior:'smooth'});
+            });
+        });
+        // Show only home by default
+        sections.forEach(sec => sec.style.display = 'none');
+        document.getElementById('home').style.display = '';
+    </script>
+</body>
+</html> 

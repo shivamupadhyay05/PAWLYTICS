@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pawcare-connect Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', 'Segoe UI', 'Roboto', Arial, sans-serif;
+        }
+        .split-layout {
+            display: flex;
+            flex-direction: row;
+            width: 90vw;
+            max-width: 1000px;
+            min-height: 80vh;
+            background: none;
+            gap: 2.5rem;
+        }
+        .login-side, .chatbot-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .pet-illustration {
+            margin-bottom: 1.5rem;
+        }
+        .login-card {
+            background: #f8fafc;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+            padding: 2.5rem 2rem 2rem 2rem;
+            max-width: 370px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3.5rem;
+        }
+        .login-title {
+            color: #4e54c8;
+            margin-bottom: 0.5rem;
+            font-size: 2.1rem;
+            letter-spacing: 2px;
+            text-align: center;
+            font-weight: 800;
+        }
+        .login-card p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+        .login-options {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .login-btn {
+            background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+            color: #fff;
+            border: none;
+            border-radius: 2rem;
+            padding: 1rem 0;
+            font-size: 1.08rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(78, 84, 200, 0.10);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            outline: none;
+            width: 100%;
+        }
+        .login-btn:hover, .login-btn:focus {
+            background: linear-gradient(90deg, #8f94fb 0%, #4e54c8 100%);
+        }
+        .login-extra {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 1.2rem;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+        }
+        .login-extra a {
+            color: #4e54c8 !important;
+            text-decoration: none;
+            font-size: 1.08rem;
+            font-weight: 700;
+            border: 2px solid #8f94fb;
+            border-radius: 2rem;
+            padding: 0.5rem 1.4rem;
+            margin: 0.2rem 0.2rem;
+            background: #f8fafc;
+            transition: color 0.2s, background 0.2s, border 0.2s;
+            display: inline-block;
+            opacity: 1 !important;
+            filter: none !important;
+            pointer-events: auto !important;
+        }
+        .login-extra a:hover, .login-extra a:focus {
+            color: #fff;
+            background: #4e54c8;
+            border-color: #4e54c8;
+        }
+        .chatbot-card {
+            background: #f8fafc;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            max-width: 370px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-height: 350px;
+        }
+        .chatbot-header {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #4e54c8;
+            margin-bottom: 1rem;
+        }
+        .chatbot-bubble {
+            background: #e0e7ff;
+            color: #23243a;
+            border-radius: 1.2rem 1.2rem 1.2rem 0.3rem;
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 0.7rem;
+            max-width: 80%;
+            font-size: 1.04rem;
+            box-shadow: 0 2px 8px rgba(78, 84, 200, 0.07);
+        }
+        .chatbot-input-row {
+            display: flex;
+            width: 100%;
+            margin-top: auto;
+            gap: 0.5rem;
+        }
+        .chatbot-input {
+            flex: 1;
+            border-radius: 1.2rem;
+            border: 1.5px solid #c7d2fe;
+            padding: 0.7rem 1rem;
+            font-size: 1rem;
+            outline: none;
+        }
+        .chatbot-send {
+            background: #4e54c8;
+            color: #fff;
+            border: none;
+            border-radius: 1.2rem;
+            padding: 0.7rem 1.2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .chatbot-send:hover {
+            background: #8f94fb;
+        }
+        .animal-bg-graphic {
+            position: fixed;
+            left: 0; top: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+        .animal-bg-img {
+            width: 480px;
+            max-width: 60vw;
+            opacity: 0.13;
+            filter: blur(0.5px) drop-shadow(0 4px 24px rgba(78,84,200,0.10));
+            margin: 0 2vw 2vw 0;
+            user-select: none;
+        }
+        .animal-bg-img-right {
+            margin-left: auto;
+        }
+        .animal-bg-img-left {
+            margin-right: auto;
+        }
+        .animal-bg-img-topright {
+            margin-top: auto;
+            margin-right: auto;
+        }
+        @media (max-width: 900px) {
+            .split-layout {
+                flex-direction: column;
+                gap: 1.5rem;
+                width: 98vw;
+                min-height: unset;
+            }
+            .login-side, .chatbot-side {
+                min-height: unset;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animal-bg-graphic">
+        <img src="https://pngimg.com/d/dog_PNG50348.png" alt="Dog Illustration" class="animal-bg-img animal-bg-img-right" />
+        <img src="https://pngimg.com/d/cat_PNG50425.png" alt="Cat Illustration" class="animal-bg-img animal-bg-img-left" />
+        <img src="https://pngimg.com/d/paw_PNG62.png" alt="Paw Print" class="animal-bg-img animal-bg-img-topright" />
+    </div>
+    <div class="split-layout">
+        <div class="login-side">
+            <div class="login-card">
+                <h1 class="login-title">PAWLYTICS</h1>
+                <p>Please select your login type:</p>
+                <div class="login-options">
+                    <a href="customer.html" class="login-btn">Login as Customer</a>
+                    <a href="shopkeeper.html" class="login-btn">Login as Shopkeeper</a>
+                </div>
+                <div class="login-extra">
+                    <a href="#" id="register-link">Register as New User</a>
+                    <a href="#" id="help-link">Need Help?</a>
+                    <a href="#" id="forgot-link">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-side">
+            <div class="chatbot-card">
+                <div class="chatbot-header">Pawlytics AI Assistant</div>
+                <div class="chatbot-bubble">Hi! 👋 I’m your Pawlytics AI assistant. Ask me anything about pet care, shops, or health!</div>
+                <div class="chatbot-bubble" style="align-self: flex-end; background:#4e54c8; color:#fff; border-radius:1.2rem 1.2rem 0.3rem 1.2rem;">What are common symptoms of dog fever?</div>
+                <div class="chatbot-bubble">Some common symptoms are lethargy, loss of appetite, and shivering. Would you like to know more?</div>
+                <form class="chatbot-input-row" onsubmit="return false;">
+                    <input class="chatbot-input" type="text" placeholder="Type your question..." />
+                    <button class="chatbot-send">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

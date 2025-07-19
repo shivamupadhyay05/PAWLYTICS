@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pawcare-connect | Shopkeeper</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav-bar">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#manage-stock" class="nav-link">Manage Stock</a>
+        <a href="#order-requests" class="nav-link">Order Requests</a>
+        <a href="#profile" class="nav-link">Profile</a>
+    </nav>
+    <main class="customer-main">
+        <section id="home" class="section">
+            <h1>Welcome, Shopkeeper!</h1>
+            <p>This is your Pawlytics dashboard. Here you can manage your shop's stock, view orders, and update your profile.</p>
+            <ul style="margin-top:1.5rem;line-height:2;">
+                <li>✔️ Add, update, and manage your product listings</li>
+                <li>✔️ View and process customer order requests</li>
+                <li>✔️ Track your sales and inventory in one place</li>
+                <li>✔️ Update your profile and shop settings</li>
+                <li>✔️ Get support and platform updates</li>
+            </ul>
+            <div style="margin-top:2.5rem;">
+                <strong>Contact us:</strong> support@pawlytics.com | +1-800-555-PAWS
+            </div>
+        </section>
+        <section id="manage-stock" class="section" style="display:none;">
+            <h2>Manage Stock</h2>
+            <button class="login-btn" style="margin-bottom:1.5rem;">Add Product</button>
+            <table class="cart-table" style="width:100%;margin-bottom:1.5rem;">
+                <thead>
+                    <tr>
+                        <th style="text-align:left;">Product</th>
+                        <th style="text-align:center;">Quantity</th>
+                        <th style="text-align:right;">Price</th>
+                        <th colspan="2"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dog Food</td>
+                        <td style="text-align:center;">10</td>
+                        <td style="text-align:right;">$20</td>
+                        <td><button class="login-btn" style="padding:0.2rem 1rem;font-size:0.95rem;">Edit</button></td>
+                        <td><button class="login-btn" style="padding:0.2rem 1rem;font-size:0.95rem;">Remove</button></td>
+                    </tr>
+                    <tr>
+                        <td>Cat Toy</td>
+                        <td style="text-align:center;">25</td>
+                        <td style="text-align:right;">$8</td>
+                        <td><button class="login-btn" style="padding:0.2rem 1rem;font-size:0.95rem;">Edit</button></td>
+                        <td><button class="login-btn" style="padding:0.2rem 1rem;font-size:0.95rem;">Remove</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="order-requests" class="section" style="display:none;">
+            <h2>Order Requests</h2>
+            <table class="cart-table" style="width:100%;margin-bottom:1.5rem;">
+                <thead>
+                    <tr>
+                        <th style="text-align:left;">Order ID</th>
+                        <th style="text-align:left;">Customer</th>
+                        <th style="text-align:left;">Product</th>
+                        <th style="text-align:center;">Quantity</th>
+                        <th style="text-align:center;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1001</td>
+                        <td>John Doe</td>
+                        <td>Dog Food</td>
+                        <td style="text-align:center;">2</td>
+                        <td style="text-align:center;">Pending</td>
+                    </tr>
+                    <tr>
+                        <td>#1002</td>
+                        <td>Jane Smith</td>
+                        <td>Cat Toy</td>
+                        <td style="text-align:center;">1</td>
+                        <td style="text-align:center;">Shipped</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="profile" class="section" style="display:none;">
+            <h2>Profile</h2>
+            <div style="margin-bottom:1.5rem;">
+                <strong>Name:</strong> Jane Shopkeeper<br>
+                <strong>Email:</strong> jane@shop.com<br>
+                <strong>Products Listed:</strong> 12<br>
+                <strong>Orders Received:</strong> 8
+            </div>
+            <div style="margin-bottom:1.5rem;">
+                <h3>Settings</h3>
+                <ul style="list-style:none;padding:0;">
+                    <li><a href="#" style="color:#8f94fb;">Change Password</a></li>
+                    <li><a href="#" style="color:#8f94fb;">Notification Preferences</a></li>
+                    <li><a href="#" style="color:#8f94fb;">Logout</a></li>
+                </ul>
+            </div>
+        </section>
+        <div class="login-extra">
+            <a href="index.html">Back to Login</a>
+        </div>
+    </main>
+    <footer style="width:100%;background:#23243a;color:#f3f3f3;text-align:center;padding:1.5rem 0 1rem 0;margin-top:2rem;border-top:1px solid #4e54c8;">
+        <div style="font-size:1.1rem;font-weight:600;">Pawlytics &copy; 2024</div>
+        <div style="margin-top:0.5rem;">Contact: support@pawlytics.com | +1-800-555-PAWS</div>
+        <div style="margin-top:0.5rem;">Follow us: <a href="#" style="color:#8f94fb;">Instagram</a> | <a href="#" style="color:#8f94fb;">Facebook</a> | <a href="#" style="color:#8f94fb;">Twitter</a></div>
+    </footer>
+    <script>
+        // SPA-like navigation: show only one section at a time
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = this.getAttribute('href').replace('#','');
+                sections.forEach(sec => sec.style.display = 'none');
+                document.getElementById(target).style.display = '';
+                window.scrollTo({top:0,behavior:'smooth'});
+            });
+        });
+        // Show only home by default
+        sections.forEach(sec => sec.style.display = 'none');
+        document.getElementById('home').style.display = '';
+    </script>
+</body>
+</html> 
